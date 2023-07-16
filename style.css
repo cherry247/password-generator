@@ -16,4 +16,43 @@ body{
     font-size: 26px;
     color: #023047;
     font-family: 'Montserrat', sans-serif;
+    font-size: 30px ;
+}
+.box input{
+    user-select: none;
+    padding: auto;
+    height: 40px;
+    width: 400px;
+    border-radius: 6px;
+    border: none;
+    border: 2px solid #023047;
+    outline: none;
+    font-size: 20px;
+}
+input::placeholder{
+    font-size: 18px;
+    padding: 10px;
+}
+#button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    margin-top: 40px;
+    border: 2px solid #023047;
+    width: 155px;
+    height: 50px;
+    text-align: center;
+    background-color: #023047;
+    display: flex;
+    color: #ffb703;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;  
+}
+.btn2{
+    margin-left: 85px;
+}
+#button:hover{
+    color:#023047;
+    background-color: #ffb703 ;
 }
