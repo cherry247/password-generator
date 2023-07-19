@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
-        <meta http-equiv='cache-control' content='no-cache'> 
-        <meta http-equiv='expires' content='0'> 
-        <meta http-equiv='pragma' content='no-cache'>    
-    </head>
-    <body>
-        <div class="box">
-            <h2>Password generator</h2>
-            <input type="text" name="" placeholder="Create Password" id="password" readonly>
-            <table>
-                <th><div id="button" class="btn1" onclick="wordGenPass()">Generate</div></th>
-                <th><div id="button" class="btn2" onclick="copyPassword()">Copy</div></th>
-            </table>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Password generator</h2>
+        <div class="tag-container">
+            <input />
         </div>
-    </body>
+        <script src="tagInput.js"></script>
+        <div class="gen-pass">
+            <input type="text" name="pass" class="password" placeholder="Create Password" id="password" readonly>
+        </div>
+        <table>
+            <th>
+                <div id="button" class="btn1" onclick="wordGenPass()">Generate</div>
+            </th>
+            <th>
+                <div id="button" class="btn2" onclick="copyPassword()">Copy</div>
+            </th>
+        </table>
+    </div>
+</body>
+
 </html>

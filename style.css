@@ -18,9 +18,9 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-size: 30px ;
 }
-.box input{
+.box input[name="pass"]{
     user-select: none;
-    padding: auto;
+    padding: 10px;
     height: 40px;
     width: 400px;
     border-radius: 6px;
@@ -55,4 +55,31 @@ input::placeholder{
 #button:hover{
     color:#023047;
     background-color: #ffb703 ;
+}
+.tag-container{
+    border: 2px solid #023047;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+}
+.tag-container .tag{
+    padding: 6px;
+    border: 1px solid #023047;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #023047;
+    color:#ffb703;
+}
+.tag span{
+    font-size: 16px;
+    margin-left: 5px;
+}
+.tag-container input{
+    border: 0px;
+    outline: none;
+    padding: 6px;
+    font-size: 16px;
+    flex:1;
 }
