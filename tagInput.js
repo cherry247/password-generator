@@ -18,7 +18,13 @@ function createTag(label){
 
     return div;
 }
+function reset(){
+    document.querySelectorAll('.tag').forEach(function(tag){
+        tag.parentElement.removeChild(tag);
+    })
+}
 function addTags(){
+    reset();
     tags.forEach(function(tag){
         const input = createTag(tag);
         tagContainer.prepend(input);
