@@ -1,5 +1,9 @@
 const tagContainer = document.querySelector('.tag-container');
 
+const input = document.querySelector('.tag-container input');
+
+var tags = [];
+
 function createTag(label){
     const div = document.createElement('div');
     div.setAttribute('class','tag');
@@ -14,4 +18,18 @@ function createTag(label){
 
     return div;
 }
-tagContainer.prepend(createTag('javascript'));
+function addTags(){
+    tags.forEach(function(tag){
+        const input = createTag(tag);
+        tagContainer.prepend(input);
+    })
+   
+}
+input.addEventListener('keyup',function(e){
+    if(e.key === 'Enter'){
+        tags.push(input.value);
+        addTags();
+        input.value='';
+    
+    }
+}) 
