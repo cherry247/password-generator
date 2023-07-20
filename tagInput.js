@@ -25,11 +25,11 @@ function reset(){
 }
 function addTags(){
     reset();
-    tags.forEach(function(tag){
+    tags.slice().reverse().forEach(function(tag){
         const input = createTag(tag);
         tagContainer.prepend(input);
     })
-   
+    
 }
 input.addEventListener('keyup',function(e){
     if(e.key === 'Enter'){
