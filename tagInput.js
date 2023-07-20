@@ -11,7 +11,16 @@ function createTag(label){
     span.innerHTML=label;
     const closeBtn = document.createElement('span');
     closeBtn.setAttribute('class','material-symbols-outlined');
+    closeBtn.setAttribute('data-item',label);
     closeBtn.innerHTML = 'close';
+    closeBtn.addEventListener('click', function(e) {
+        const value = e.target.getAttribute('data-item');
+        const index = tags.indexOf(value);
+        console.log("before",tags);
+        tags = [...tags.slice(0, index), ...tags.slice(index+1)];
+        console.log("after",tags);
+        addTags();
+    });
 
     div.appendChild(span);
     div.appendChild(closeBtn);
@@ -29,7 +38,7 @@ function addTags(){
         const input = createTag(tag);
         tagContainer.prepend(input);
     })
-    
+
 }
 input.addEventListener('keyup',function(e){
     if(e.key === 'Enter'){
