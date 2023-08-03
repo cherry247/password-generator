@@ -61,6 +61,7 @@ input::placeholder{
     padding: 10px;
     border-radius: 6px;
     display: flex;
+    margin-bottom: 15px;
 }
 .tag-container .tag{
     padding: 6px;
