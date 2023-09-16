@@ -5,6 +5,11 @@ const input = document.querySelector('.tag-container input');
 
 const tagLimitMessage = document.querySelector('p');
 
+const tagLimit = 5;
+
+const tagLimitDisplay = document.getElementById('tag-limit-reached');
+
+
 var tags = [];
 
 function createTag(label){
@@ -49,15 +54,17 @@ function addTags(){
 input.addEventListener('keypress',function(e){
     if(e.key === 'Enter' || e.key === " "){
         if(input.value.trim() !== "") {
+            console.log("input value"+input.value.trim()+"....");
             tags.push(input.value.trim());
             addTags();
             input.value='';
         }
     }
 
-    if(tags.length === 5) {
+    if(tags.length === tagLimit) {
         input.disabled = true;
         tagLimitMessage.style.display = "block";
+        tagLimitDisplay.textContent = 'More than ' + tagLimit +  ' tags not allowed!';
     }
 })
 
