@@ -3,6 +3,8 @@ const tagContainer = document.querySelector('.tag-container');
 
 const input = document.querySelector('.tag-container input');
 
+const tagLimitMessage = document.querySelector('p');
+
 var tags = [];
 
 function createTag(label){
@@ -20,6 +22,8 @@ function createTag(label){
         console.log("before",tags);
         tags = [...tags.slice(0, index), ...tags.slice(index+1)];
         console.log("after",tags);
+        input.disabled = false;
+        tagLimitMessage.style.display = "none";
         addTags();
     });
 
@@ -41,14 +45,22 @@ function addTags(){
     })
 
 }
+
 input.addEventListener('keyup',function(e){
     if(e.key === 'Enter' || e.key === " "){
-        tags.push(input.value);
-        addTags();
-        input.value='';  
-
+        if(input.value.trim() !== "") {
+            tags.push(input.value.trim());
+            addTags();
+            input.value='';
+        }
     }
-}) 
+
+    if(tags.length === 5) {
+        input.disabled = true;
+        tagLimitMessage.style.display = "block";
+    }
+})
+
 var password = document.getElementById("password");
 
 function wordGenPass(){
