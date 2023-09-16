@@ -1,13 +1,12 @@
+let tagContainer = document.querySelector('.tag-container');
 
-const tagContainer = document.querySelector('.tag-container');
+let input = document.querySelector('.tag-container input');
 
-const input = document.querySelector('.tag-container input');
+let tagLimitMessage = document.querySelector('p');
 
-const tagLimitMessage = document.querySelector('p');
+const TAG_LIMIT = 5;
 
-const tagLimit = 5;
-
-const tagLimitDisplay = document.getElementById('tag-limit-reached');
+let tagLimitDisplay = document.getElementById('tag-limit-reached');
 
 
 var tags = [];
@@ -61,10 +60,10 @@ input.addEventListener('keypress',function(e){
         }
     }
 
-    if(tags.length === tagLimit) {
+    if(tags.length === TAG_LIMIT) {
         input.disabled = true;
         tagLimitMessage.style.display = "block";
-        tagLimitDisplay.textContent = 'More than ' + tagLimit +  ' tags not allowed!';
+        tagLimitDisplay.textContent = 'More than ' + TAG_LIMIT +  ' tags not allowed!';
     }
 })
 
