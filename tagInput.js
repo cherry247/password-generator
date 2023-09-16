@@ -46,7 +46,7 @@ function addTags(){
 
 }
 
-input.addEventListener('keyup',function(e){
+input.addEventListener('keypress',function(e){
     if(e.key === 'Enter' || e.key === " "){
         if(input.value.trim() !== "") {
             tags.push(input.value.trim());
