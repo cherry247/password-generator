@@ -42,7 +42,7 @@ function addTags(){
 
 }
 input.addEventListener('keyup',function(e){
-    if(e.key === 'Enter'){
+    if(e.key === 'Enter' || e.key === " "){
         tags.push(input.value);
         addTags();
         input.value='';  
