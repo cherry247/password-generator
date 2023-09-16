@@ -93,3 +93,9 @@ input::placeholder{
     margin-left: 5px;
 }
 
+.tag-limit {
+    display: none;
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}

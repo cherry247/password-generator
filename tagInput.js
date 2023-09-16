@@ -1,7 +1,13 @@
+let tagContainer = document.querySelector('.tag-container');
 
-const tagContainer = document.querySelector('.tag-container');
+let input = document.querySelector('.tag-container input');
 
-const input = document.querySelector('.tag-container input');
+let tagLimitMessage = document.querySelector('p');
+
+const TAG_LIMIT = 5;
+
+let tagLimitDisplay = document.getElementById('tag-limit-reached');
+
 
 var tags = [];
 
@@ -20,6 +26,8 @@ function createTag(label){
         console.log("before",tags);
         tags = [...tags.slice(0, index), ...tags.slice(index+1)];
         console.log("after",tags);
+        input.disabled = false;
+        tagLimitMessage.style.display = "none";
         addTags();
     });
 
@@ -41,14 +49,24 @@ function addTags(){
     })
 
 }
-input.addEventListener('keyup',function(e){
-    if(e.key === 'Enter' || e.key === " "){
-        tags.push(input.value);
-        addTags();
-        input.value='';  
 
+input.addEventListener('keypress',function(e){
+    if(e.key === 'Enter' || e.key === " "){
+        if(input.value.trim() !== "") {
+            console.log("input value"+input.value.trim()+"....");
+            tags.push(input.value.trim());
+            addTags();
+            input.value='';
+        }
     }
-}) 
+
+    if(tags.length === TAG_LIMIT) {
+        input.disabled = true;
+        tagLimitMessage.style.display = "block";
+        tagLimitDisplay.textContent = 'More than ' + TAG_LIMIT +  ' tags not allowed!';
+    }
+})
+
 var password = document.getElementById("password");
 
 function wordGenPass(){
