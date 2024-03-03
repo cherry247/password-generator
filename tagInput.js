@@ -66,6 +66,7 @@ function wordGenPass(){
         let symbol =symbols.substring(symbolIdx,symbolIdx+1);
         password = randomWord1.concat(number,randomWord2,symbol);
     }
+    password = password.replace(/\s/g, "");
     document.getElementById("password").value = password;
 }
 function randomWord(words){
